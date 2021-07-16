@@ -7,7 +7,6 @@ class ThreeMap extends Component {
   componentDidMount() {
     // Scene, Camera, Renderer
     var renderer = new THREE.WebGLRenderer();
-
     var scene = new THREE.Scene();
     let aspect = window.innerWidth / window.innerHeight;
     let camera = new THREE.PerspectiveCamera(50, aspect, 0.1, 2000);
@@ -248,7 +247,7 @@ class ThreeMap extends Component {
       );
       httpRequest.send(null);
       httpRequest.onreadystatechange = function () {
-        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+        if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           let result = JSON.parse(httpRequest.responseText);
 
           if (result.results.length > 0) {
